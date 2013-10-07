@@ -28,7 +28,7 @@ namespace JonsFirstThing
             Title = elem.Value<String>("title") ?? "Untitled";
             Link = elem.Value<String>("link") ?? "#";
             Description = elem.Value<String>("description") ?? "";
-            Categories = (elem.Value<String>("title") ?? "")
+            Categories = (elem.Value<String>("categories") ?? "")
                 .Split(',').Select(x => x.Trim().ToLower()).ToArray();
             PubDate = DateTime.Parse(elem.Value<String>("pubDate"));
         }

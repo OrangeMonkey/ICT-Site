@@ -40,21 +40,24 @@ namespace JonsFirstThing
                             Tag("div", id => "lshadow"),
                             Tag("div", id => "rshadow"),
                             Tag("div", id => "page")(
-                                Tag("div", id => "header")(
-                                    Tag("div", id => "title"),
-                                    Tag("div", id => "contactinfo")
+                                Tag("div", id => "headerrow")(
+                                    Tag("div", id => "header")(
+                                        Tag("div", id => "title"),
+                                        Tag("div", id => "contactinfo")
+                                    ),
+                                    Tag("div", id => "navbar")(
+                                        NavButton("Home", "/"),
+                                        NavButton("Guides", "/guides"),
+                                        NavButton("Statistics"),
+                                        NavButton("Meet the Team"),
+                                        NavButton("Newsletter"),
+                                        NavButton("Resources"),
+                                        NavButton("ICT News"),
+                                        NavButton("Archive", "/archive")
+                                    )
                                 ),
-                                Tag("div", id => "navbar")(
-                                    NavButton("Home", "/"),
-                                    NavButton("Guides", "/guides"),
-                                    NavButton("Statistics"),
-                                    NavButton("Meet the Team"),
-                                    NavButton("Newsletter"),
-                                    NavButton("Resources"),
-                                    NavButton("ICT News"),
-                                    NavButton("Archive")
-                                ),
-                                Tag("div", id => "content")(Dyn(Content))
+                                Tag("div", id => "innerpage")(Tag("div", @class => "content")(Dyn(Content))),
+                                Tag("div", id => "footer")(Tag("div", @class => "content")(Dyn(Footer)))
                             )
                         )
                     )
@@ -63,6 +66,11 @@ namespace JonsFirstThing
         }
 
         protected virtual void Content()
+        {
+            return;
+        }
+
+        protected virtual void Footer()
         {
             return;
         }

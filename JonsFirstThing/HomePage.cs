@@ -35,8 +35,8 @@ namespace JonsFirstThing
                 _testFeed.Fetch();
             }
 
-            var articles = Database.SelectAll<Article>().OrderByDescending(x => x.Posted);
-            foreach (var article in articles.Take(4))
+            var articles = Database.SelectAll<Article>().OrderByDescending(x => x.Posted).Take(4);
+            foreach (var article in articles)
             {
                 Write(
                     Tag("h2")(article.Title),
@@ -46,7 +46,7 @@ namespace JonsFirstThing
                             Write(firstParagraph);
 
                             if (firstParagraph.Length < article.Content.Length) {
-                                Write(Ln, Ln, Tag("a", href => Format("/article?id={0}", article.ID))("Read&nbsp;More&nbsp;>>"));
+                                Write(Ln, Ln, Tag("a", href => Format("/archive?id={0}", article.ID))("Read&nbsp;More&nbsp;>>"));
                             }
                         })
                     ),
@@ -57,12 +57,16 @@ namespace JonsFirstThing
                     })
                 );
             }
+        }
 
+        protected override void Footer()
+        {
             foreach (var item in _testFeed.Recent) {
-                Write(Ln, Tag("a", href => item.Link, title => item.Title)(item));
+                Write(Tag("a", href => item.Link, title => item.Title)(item));
+                if (item != _testFeed.Recent.Last()) {
+                    Write(Ln);
+                }
             }
-
-            Write(Ln, "&nbsp;");
         }
     }
 }
