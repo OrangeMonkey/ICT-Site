@@ -1,3 +1,7 @@
 [submodule "WebServer"]
 	path = WebServer
 	url = git@github.com:Metapyziks/WebServer.git
+
+[submodule "DatabaseTools"]
+	path = DatabaseTools
+	url = git@github.com:Metapyziks/DatabaseTools.git
