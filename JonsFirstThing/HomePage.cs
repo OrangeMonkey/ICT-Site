@@ -11,6 +11,10 @@ namespace JonsFirstThing
     [ServletURL("/")]
     class HomePage : Page
     {
+        private static RSSFeed _testFeed = new RSSFeed("TechRadar",
+            "http://feeds.feedburner.com/techradar/computing-news?format=xml",
+            "http://www.techradar.com/");
+
         private static int IndexOfOrLength(String str, String value)
         {
             int index = str.IndexOf(value);
@@ -27,6 +31,10 @@ namespace JonsFirstThing
 
         protected override void Content()
         {
+            if (_testFeed.LastFetch.AddMinutes(1) < DateTime.Now) {
+                _testFeed.Fetch();
+            }
+
             var articles = Database.SelectAll<Article>().OrderByDescending(x => x.Posted);
             foreach (var article in articles.Take(4))
             {
@@ -49,6 +57,12 @@ namespace JonsFirstThing
                     })
                 );
             }
+
+            foreach (var item in _testFeed.Recent) {
+                Write(Ln, Tag("a", href => item.Link, title => item.Title)(item));
+            }
+
+            Write(Ln, "&nbsp;");
         }
     }
 }
