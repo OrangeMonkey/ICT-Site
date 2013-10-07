@@ -3,6 +3,10 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Express 2012 for Windows Desktop
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JonsFirstThing", "JonsFirstThing\JonsFirstThing.csproj", "{6CF79E45-7268-4FCC-A41A-8EDDD4CBC34F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebServer", "WebServer\WebServer.csproj", "{A277A44E-6DB6-481B-898E-2FD621161DEF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatabaseTools", "DatabaseTools\DatabaseTools.csproj", "{FA0A04B5-A347-489F-B0CD-2C2971D92999}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +17,14 @@ Global
 		{6CF79E45-7268-4FCC-A41A-8EDDD4CBC34F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6CF79E45-7268-4FCC-A41A-8EDDD4CBC34F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6CF79E45-7268-4FCC-A41A-8EDDD4CBC34F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A277A44E-6DB6-481B-898E-2FD621161DEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A277A44E-6DB6-481B-898E-2FD621161DEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A277A44E-6DB6-481B-898E-2FD621161DEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A277A44E-6DB6-481B-898E-2FD621161DEF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA0A04B5-A347-489F-B0CD-2C2971D92999}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA0A04B5-A347-489F-B0CD-2C2971D92999}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA0A04B5-A347-489F-B0CD-2C2971D92999}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA0A04B5-A347-489F-B0CD-2C2971D92999}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

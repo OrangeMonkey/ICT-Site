@@ -1,0 +1,161 @@
+﻿body, html
+{
+	background-image: url(/res/testbg.png);
+	font-family: sans-serif;
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+
+#main, #page
+{
+	min-width: 800px;
+	max-width: 1024px;
+}
+
+#main
+{
+	height: 100%;
+	padding-left: 32px;
+	padding-right: 32px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#page
+{
+	height: 100%;
+	background-color: #ffffff;
+}
+
+#lshadow, #rshadow
+{
+	width: 32px;
+	height: 100%;
+}
+
+#lshadow
+{
+	margin-left: -32px;
+	float: left;
+	background-image: url(/res/lshadow.png);
+}
+
+#rshadow
+{
+	margin-right: -32px;
+	float: right;
+	background-image: url(/res/rshadow.png);
+}
+
+#header
+{
+	width: 100%;
+	height: 128px;
+	background-color: #2374ad;
+}
+
+#title, #contactinfo
+{
+	width: 320px;
+	height: 100%;
+}
+
+#title
+{
+	float: left;
+	margin-left: 16px;
+	background-image: url(/res/title.png);
+}
+
+#contactinfo
+{
+	float: right;
+	background-image: url(/res/contactinfo.png);
+}
+
+#navbar
+{
+	display: table;
+	width: 100%;
+	table-layout: fixed;
+	background-color: #c6c6c6;
+	padding-bottom: 1px;
+}
+
+#navbar .button, #navbar .current
+{
+	display: table-cell;
+	width: 0;
+	height: 40px;
+	white-space: nowrap;
+	line-height: 40px;
+	font-family: sans-serif;
+	font-size: 10pt;
+	font-weight: bold;
+	background-color: #ffffff;
+	color: #2374ad;
+	text-align: center;
+	transition: background-color .5s ease-out,
+				color .5s ease-out;
+	-moz-transition: background-color .5s ease-out,
+				color .5s ease-out;
+	-webkit-transition: background-color .5s ease-out,
+				color .5s ease-out;
+	-o-transition: background-color .5s ease-out,
+				color .5s ease-out;
+}
+
+#navbar .button:hover
+{
+	background-color: #2374ad;
+	color: #ffffff;
+	transition: background-color 0s ease-out,
+				color 0s ease-out;
+	-moz-transition: background-color 0s ease-out,
+				color 0s ease-out;
+	-webkit-transition: background-color 0s ease-out,
+				color 0s ease-out;
+	-o-transition: background-color 0s ease-out,
+				color 0s ease-out;
+}
+
+#navbar .current
+{
+	background-color: #2374ad;
+	color: #ffffff;
+}
+
+#navbar .button a
+{
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+	text-decoration: none;
+	color: inherit;
+}
+
+#content
+{
+	padding-left: 16px;
+	padding-right: 22px;
+	color: #2374ad;
+}
+
+#content a
+{
+	text-decoration: none;
+	font-weight: bold;
+	color: inherit;
+}
+
+#aTitle
+{
+	width: 50%;
+}
+
+#aContent
+{
+	width: 100%;
+	height: 256px;
+}
