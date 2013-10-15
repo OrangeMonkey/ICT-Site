@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using WebServer;
 using System.DirectoryServices.AccountManagement;
+using System.Net;
 
 namespace JonsFirstThing
 {
@@ -36,14 +37,6 @@ namespace JonsFirstThing
             var username = post["username"] ?? "";
             var password = post["password"] ?? "";
 
-            var account = Database.SelectFirst<Account>(x => x.Username == username);
-
-            if (account == null)
-            {
-                Response.Redirect("/adminlogin");
-                return false;
-            }
-
             using (var pc = new PrincipalContext(ContextType.Domain, "plume.local"))
             {
                 var isvalid = pc.ValidateCredentials(username, password);
@@ -52,6 +45,9 @@ namespace JonsFirstThing
                 {
                     var user = UserPrincipal.FindByIdentity(pc, username);
                     user.GetAuthorizationGroups();
+                    var session = Session.Create(username, Request.RemoteEndPoint.Address);
+                    Response.SetCookie(new Cookie("username", username));
+                    Response.SetCookie(new Cookie("session", session.Hash));
                     Response.Redirect("/publish");
                     return false;
                 }

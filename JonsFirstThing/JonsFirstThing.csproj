@@ -43,7 +43,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Account.cs" />
     <Compile Include="Article.cs" />
     <Compile Include="ArticlePage.cs" />
     <Compile Include="Fetchable.cs" />
@@ -55,6 +54,7 @@
     <Compile Include="PublishArticlePage.cs" />
     <Compile Include="RestartServlet.cs" />
     <Compile Include="RSSFeed.cs" />
+    <Compile Include="Session.cs" />
     <Compile Include="Tools.cs" />
   </ItemGroup>
   <ItemGroup>

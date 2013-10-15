@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DatabaseTools;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,6 +10,8 @@ namespace JonsFirstThing
 {
     abstract class Page : HTMLServlet
     {
+        protected Session Session { get; private set; }
+
         protected string NavButton(string text, string link = "/404")
         {
             if (Request.Url.LocalPath == link)
@@ -23,6 +26,23 @@ namespace JonsFirstThing
                     Tag("a", href => link)(text)
                 );
             }
+        }
+
+        protected override bool OnPreService()
+        {
+            var username = Request.Cookies["username"];
+            var hash = Request.Cookies["session"];
+
+            if (username != null && hash != null)
+            {
+                Session = Database.SelectFirst<Session>(x => x.Username == username.Value && x.Hash == hash.Value);
+            }
+            else
+            {
+                Session = null;
+            }
+
+            return base.OnPreService();
         }
 
         protected override void OnService()

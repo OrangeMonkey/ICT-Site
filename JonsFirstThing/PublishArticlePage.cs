@@ -20,6 +20,17 @@ namespace JonsFirstThing
             {"admjml", "J. Morrell"}
         };
 
+        protected override bool OnPreService()
+        {
+            base.OnPreService();
+            if (Session == null)
+            {
+                Server.CreateNotFoundServlet().Service(Request, Response);
+                return false;
+            }
+            return true;
+        }
+
         protected override void Content()
         {
             Write(
