@@ -23,6 +23,7 @@ namespace JonsFirstThing
             DefaultResourceServlet.ResourceDirectory = "res";
 #endif
             Database.ConnectLocal();
+            Account.DefaultAccountCheck();
             server.Run();
             Database.Disconnect();
         }

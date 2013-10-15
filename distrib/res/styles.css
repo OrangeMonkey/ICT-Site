@@ -1,6 +1,8 @@
 ﻿body, html
 {
 	background-image: url(/res/testbg.png);
+	background-color: #ffffff;
+	background-size: 100% auto;
 	font-family: sans-serif;
 	margin: 0;
 	padding: 0;
@@ -24,8 +26,37 @@
 
 #page
 {
+	display: table;
 	height: 100%;
 	background-color: #ffffff;
+}
+
+#innerpage
+{
+	/* display: table-row; */
+	height: 100%;
+	overflow-y: scroll;
+}
+
+#footer
+{
+	display: table-row;
+	height: 40px;
+	background-color: #2374ad;
+	color: #ffffff;
+}
+
+#footer .content
+{
+	width: 100%;
+	height: 100%;
+	margin: 8px;
+}
+
+#footer .content a
+{
+	color: #ffffff;
+	text-decoration: none;
 }
 
 #lshadow, #rshadow
@@ -72,6 +103,15 @@
 {
 	float: right;
 	background-image: url(/res/contactinfo.png);
+}
+
+#headerrow
+{
+	width: 100%;
+	height: 168px;
+	display: table-row;
+	margin: 0px;
+	padding: 0px;
 }
 
 #navbar
@@ -135,16 +175,35 @@
 	color: inherit;
 }
 
-#content
+#innerpage .content
 {
 	padding-left: 16px;
-	padding-right: 16px;
+	padding-right: 22px;
 	color: #2374ad;
 }
 
-#content a
+#innerpage .content a
 {
 	text-decoration: none;
 	font-weight: bold;
 	color: inherit;
+}
+
+#aTitle
+{
+	width: 50%;
+}
+
+#aContent
+{
+	width: 100%;
+	height: 256px;
+}
+
+.hrule
+{
+	width: 100%;
+	margin-left: 3px;
+	height: 1px;
+	background-color: #c6c6c6;
 }

@@ -53,6 +53,7 @@ namespace JonsFirstThing
                 Posted = DateTime.Now
             };
             Database.Insert(article);
+            Response.Redirect("/");
             return base.OnPreService(); 
         }
     }
